@@ -7,6 +7,7 @@ import PoliticaPrivacidad from "../components/PoliticaPrivacidad.vue";
 import ModeLos from "../components/ModeLos.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import { Model } from "mongoose";
+import VendeDores from "../components/VendeDores.vue";
 
 
 const routes = [
@@ -34,6 +35,11 @@ const routes = [
         path: '/modelos',
         name: 'ModeLos',
         component: ModeLos
+    },
+    {
+        path: '/vendedores',
+        name: 'VendeDores',
+        component: VendeDores
     },
     {
         path: '/AvisoLegal',
