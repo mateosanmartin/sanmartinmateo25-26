@@ -94,8 +94,9 @@ import Swal from "sweetalert2";
 import axios from "axios";
 
 // Lista de noticias (cargadas desde el JSON)
-const noticias = ref(db.noticias)
-
+const noticias = ref(
+  db.noticias.sort((a, b) => new Date(b.fecha) - new Date(a.fecha))
+)
 // Control del texto expandido
 const isExpanded = ref({})
 
@@ -121,12 +122,14 @@ async function grabarNoticia() {
         : 1),
     titulo: nuevoTitulo.value,
     contenido: nuevoContenido.value,
-    fecha: new Date().toLocaleDateString("es-ES")
+    fecha: new Date().toISOString().split("T")[0]
   }
 
   try{
-     await axios.post("http://localhost:3000/noticias", nuevaNoticia).then(res => res.data);
+    await axios.post("http://localhost:3000/noticias", nuevaNoticia).then(res => res.data);
     noticias.value.push(nuevaNoticia)
+    noticias.value.sort((a, b) => new Date(b.fecha) - new Date(a.fecha))
+
 
   }catch(error){
     console.error("Fallo al guardar en la base de datos", error)
@@ -157,6 +160,7 @@ async function eliminarNoticia(id) {
   try{
     await axios.delete(`http://localhost:3000/noticias/${id}`)
     noticias.value = noticias.value.filter((n) => n.id !== id);
+    noticias.value.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
     if(id in isExpanded.value) delete isExpanded.value[id];
   }catch(error){
     console.error("Fallo al eliminar de la base de datos", error);

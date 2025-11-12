@@ -212,7 +212,7 @@
         </div>
       </div>
       <h3 class="text-center mt-2 mb-3 d-flex align-items-center justify-content-center">
-        <i class="bi bi-car-front me-2"></i>Cliente Ubicación
+        <i class="bi bi-geo-alt me-2"></i>Cliente Ubicación
       </h3>
       <!-- FILA: Ubicación -->
       <div class="row g-3 align-items-center mt-3">

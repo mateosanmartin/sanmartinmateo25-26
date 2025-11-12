@@ -92,7 +92,7 @@
         </p>     
       </div>
       <div class="mb-3 text-justify">
-        <h2 class="h5">10. Cambios dde la Política de Privacidad</h2>
+        <h2 class="h5">10. Cambios de la Política de Privacidad</h2>
         <p>
           Si tiene alguna pregunta o desea más información sobre nuestra Política de Privacidad, no dude en contactarnos en <strong>info@importexportteis.com</strong>.
           Fecha de última actualización:12/09/2025
