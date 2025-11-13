@@ -64,7 +64,7 @@
                     ? noticia.contenido
                     : noticia.contenido.slice(0, 200) + '...' }}
               </span>
-              <div class="float-end">
+              <div class="float-end mt-3">
               <a
                 href="#"
                 @click.prevent="toggleExpand(noticia.id)"
@@ -74,7 +74,7 @@
               </a>
               <button
                 @click="eliminarNoticia(noticia.id)"
-                class="btn btn-danger btn-sm me-2"
+                class="btn btn-outline-danger btn-sm me-2"
               >
                 <i class="bi bi-trash"></i>
               </button>

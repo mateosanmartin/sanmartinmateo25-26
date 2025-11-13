@@ -6,7 +6,7 @@
                 <i class="bi bi-person-gear me-2"></i>Lista de Vendedores
             </h3>
             <button type="button"
-                class="btn btn-smborder border-primary position-absolute end-0 top-50 translate-middle-y border-2 rounded-0 text-primary shadow-none me-0"
+                class="btn btn-smborder border-primary position-absolute end-0 top-50 translate-middle-y border-2 text-primary shadow-none me-0"
                 style="--bs-btn-hover-bg: var(--bs-primary-bg-subtle)" @click="limpiarPagina"
                 title="Limpiar formulario">
                 <i class="bi bi-arrow-counterclockwise"></i>
@@ -45,8 +45,8 @@
             <div class="row g-3 align-items-end d-flex justify-content-between ms-5 me-4">
                 <!-- Campo de genero-->
                 <div class="col-md-3">
-                    <label>Genero</label>
-                    <div class="col-md-3  d-flex gap-4">
+                    <label class="mb-3">Género</label>
+                    <div class="d-flex gap-4">
                         <div>
                             <label for="genero">Mujer
                                 <input type="radio" v-model="nuevoVendedor.genero" class="form-input"
@@ -82,8 +82,8 @@
                     <div class="ms-1">
                         <label for="antiguedad" class="form-label ms-5">Antigüedad</label>
                     </div>
-                    <div class="col-md-3 me-1 ms-5">
-                        <input type="checkbox" class="form-check-input align-center ms-1" id="antiguedad"
+                    <div class="col me-1 ms-5">
+                        +5 años con nosotros<input type="checkbox" class="form-check-input align-center mb-3 ms-1" id="antiguedad"
                             v-model="nuevoVendedor.antiguedad" />
                     </div>
                 </div>

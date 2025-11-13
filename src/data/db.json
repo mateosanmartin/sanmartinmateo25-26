@@ -422,6 +422,12 @@
       "titulo": "Toyota presenta un nuevo motor",
       "contenido": "Toyota presenta su nuevo eléctrico bZ4X, un SUV compacto con autonomía de hasta 450 km y tecnología avanzada de asistencia al conductor. Este modelo marca el inicio de la nueva familia bZ (beyond Zero) de Toyota, enfocada en cero emisiones. El bZ4X cuenta con tracción total opcional, carga rápida y un diseño futurista que combina eficiencia y confort. Llegará a concesionarios en 2025, posicionándose como una opción competitiva en el mercado EV global.",
       "fecha": "2025-10-23"
+    },
+    {
+      "id": "2f48",
+      "titulo": "La UE dando palos de ciego en el mundo del motor",
+      "contenido": "A pesar del firme respaldo de países como España y Francia a la meta de 2035 para prohibir la venta de coches nuevos con motores de combustión interna en la Unión Europea, Alemania ha impulsado una revisión de esta normativa ante la presión de los fabricantes de automóviles. Esta directiva forma parte del Pact Verde Europeo y pretende acelerar el fin de los combustibles fósiles en el transporte.",
+      "fecha": "2025-10-24"
     }
   ],
   "modelos": [
@@ -610,9 +616,9 @@
   "vendedores": [
     {
       "id": "1",
-      "nombre": "Mateo",
-      "apellidos": "Sanmartin",
-      "fechaEntrada": "2025-11-06",
+      "nombre": "Alfonso",
+      "apellidos": "Fernández Álvarez",
+      "fechaEntrada": "2014-02-14",
       "genero": "Hombre",
       "concesionario": "IES TEIS Motor - Vigo",
       "antiguedad": true

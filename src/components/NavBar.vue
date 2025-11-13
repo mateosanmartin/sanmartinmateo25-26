@@ -3,7 +3,9 @@
 
     <div class="container-fluid">
       <!-- Marca o logo -->
-      <a class="navbar-brand" href="#"><img src="../assets/logo-pagina.svg" alt="logo" width="40"></a>
+      <router-link to="/">
+        <img src="../assets/logo-pagina.svg" alt="logo" width="40">
+      </router-link>
 
       <!-- Botón de hamburguesa en pantallas pequeñas -->
       <button
