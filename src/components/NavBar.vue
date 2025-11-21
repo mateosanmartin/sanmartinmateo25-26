@@ -36,12 +36,32 @@
             <router-link class="nav-link" to="/modelos">Modelos</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/vendedores">Vendedores</router-link>
+            <router-link class="nav-link" to="/taller">Taller</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/#">Contacto</router-link>
           </li>
         </ul>
+        <!-- Dropdown de acceso/registro -->
+        <div class="dropdown ms-auto">
+          <button
+            class="btn btn-primary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-person fs-4"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <!-- Mostra “Acceso/Registro” se NON hai usuario logueado -->
+            <li v-if="!isLogueado"><router-link class="dropdown-item" to="/login">Acceso</router-link></li>
+            <li v-if="!isLogueado"><router-link class="dropdown-item" to="/clientes">Registro</router-link></li>
+            <!-- Mostra “Cerrar Sesión” se está logueado -->
+            <li v-if="isLogueado">
+              <a class="dropdown-item" href="#" @click.prevent="logout">Cerrar Sesión</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
@@ -49,6 +69,32 @@
 
 <script setup>
 import { RouterLink } from 'vue-router';
+import { ref, onMounted } from 'vue'
+
+// Estado do login
+const isLogueado = ref(false)
+const userName = ref('')
+
+// Cando o componente se monta, le localStorage (para cando montes a autenticación)
+onMounted(() => {
+  isLogueado.value = localStorage.getItem('isLogueado') === 'true'
+  userName.value = localStorage.getItem('userName') || ''
+})
+
+// Logout
+function logout() {
+  // Borra datos de sesión do localStorage
+  localStorage.removeItem('isLogueado')
+  localStorage.removeItem('userName')
+  localStorage.removeItem('isAdmin')
+  localStorage.removeItem('isUsuario')
+
+  // Actualiza estado
+  isLogueado.value = false
+  userName.value = ''
+  // Redirixe ao inicio recargando a páxina
+  window.location.href = '/'
+}
 
 // No necesita lógica
 </script>

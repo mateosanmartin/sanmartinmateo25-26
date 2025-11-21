@@ -613,15 +613,5 @@
       "id": "70f1"
     }
   ],
-  "vendedores": [
-    {
-      "id": "1",
-      "nombre": "Alfonso",
-      "apellidos": "Fernández Álvarez",
-      "fechaEntrada": "2014-02-14",
-      "genero": "Hombre",
-      "concesionario": "IES TEIS Motor - Vigo",
-      "antiguedad": true
-    }
-  ]
+  "taller": []
 }

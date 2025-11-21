@@ -5,9 +5,10 @@ import NotiCias from "../components/NotiCias.vue";
 import AvisoLegal from "../components/AvisoLegal.vue";
 import PoliticaPrivacidad from "../components/PoliticaPrivacidad.vue";
 import ModeLos from "../components/ModeLos.vue";
+import TaLler from "../components/CitasTaller.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import { Model } from "mongoose";
-import VendeDores from "../components/VendeDores.vue";
+import TablaLogin from "../components/TablaLogin.vue";
 
 
 const routes = [
@@ -37,9 +38,9 @@ const routes = [
         component: ModeLos
     },
     {
-        path: '/vendedores',
-        name: 'VendeDores',
-        component: VendeDores
+        path: '/taller',
+        name: 'TaLler',
+        component: TaLler
     },
     {
         path: '/AvisoLegal',
@@ -50,6 +51,11 @@ const routes = [
         path: '/PoliticaPrivacidad',
         name: 'PoliticaPrivacidad',
         component: PoliticaPrivacidad
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: TablaLogin
     }
 
 ]
