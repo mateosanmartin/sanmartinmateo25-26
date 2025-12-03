@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid my-4 p-4 border rounded-4 shadow-lg bg-white">
-        <h4 class="text-center mb-4 fw-semibold text-primary border-bottom pb-2 mt-2">
+        <h4 class="text-center mb-4 fw-semibold border-bottom pb-2 mt-2" style="color: #7a0f16;">
             <i class="bi bi-car-front me-2"></i>Registro de Vehículos
         </h4>
 
@@ -42,7 +42,7 @@
 
                 <div class="col-12 col-md-2 d-flex align-items-center">
                     <label for="matricula" class="form-label mb-0 me-3 text-nowrap">Matrícula:</label>
-                    <input type="text" id="matricula" v-model="vehiculo.matricula"
+                    <input type="text" id="matricula" v-model="vehiculo.matricula" @blur="convertirAMayusculas('matricula')"
                         class="form-control rounded-0 shadow-none border" />
                 </div>
 
@@ -120,9 +120,9 @@
                 </div>
             </div>
 
-            <h6 class="text-center fw-semibold bg-primary-subtle py-1 rounded">
+            <h4 class="text-center mb-4 fw-semibold border-bottom pb-2 mt-2" style="color: #7a0f16;">
                 <i class="bi bi-person me-2"></i>Cliente Ubicación
-            </h6>
+            </h4>
             <!-- FILA: Ubicación -->
             <div class="row g-3 align-items-center mt-3">
                 <div class="col-12 col-md-4">
@@ -198,6 +198,24 @@
                 </div>
             </div>
         </form>
+    <div class="table-responsive">
+      <h4 class="text-center mb-1" style="color: #7a0f16;">Listado de Modelos</h4>
+    <table class="table table-bordered table-striped table-sm table-hover table-sm align-middle">
+        <thead>
+          <tr class="table-primary text-center">
+            <th>Matrícula</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Estado</th>
+            <th>Contacto</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- aquí se agregarán las filas de modelos dinámicamente -->
+        </tbody>
+      </table>
+    </div>
     </div>
 </template>
 
@@ -266,6 +284,12 @@ const capitalizarTexto = (campo) => {
             return palabra.charAt(0).toUpperCase() + palabra.slice(1);
         })
         .join(" ");
+};
+
+const convertirAMayusculas = (campo) => {
+    const texto = vehiculo.value[campo] ?? "";
+    if (texto.trim() === "") return;
+    vehiculo.value[campo] = texto.toUpperCase();
 };
 
 const capitalizarContacto = (campo) => {

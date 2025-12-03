@@ -1,11 +1,9 @@
 <template>
-  <nav class="navbar navbar-dark bg-primary sticky-top navbar-expand-lg">
+  <nav class="navbar navbar-dark bg-danger sticky-top navbar-expand-lg">
 
     <div class="container-fluid">
       <!-- Marca o logo -->
-      <router-link to="/">
-        <img src="../assets/logo-pagina.svg" alt="logo" width="40">
-      </router-link>
+      <a class="navbar-brand" href="#"><img src="../assets/Paula.png" alt="logo" width="50"></a>
 
       <!-- Botón de hamburguesa en pantallas pequeñas -->
       <button
@@ -36,21 +34,26 @@
             <router-link class="nav-link" to="/modelos">Modelos</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/taller">Taller</router-link>
+            <router-link class="nav-link" to="/contacto">Contacto</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/#">Contacto</router-link>
+            <router-link class="nav-link" to="/CitasTaller">Citas Taller</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/ventas">Ventas</router-link>
           </li>
         </ul>
         <!-- Dropdown de acceso/registro -->
         <div class="dropdown ms-auto">
           <button
-            class="btn btn-primary dropdown-toggle"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
+          class="btn btn-primary dropdown-toggle d-flex align-items-center gap-2"
+          style="background-color: #b02a37; border-color: white;"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
           >
-            <i class="bi bi-person fs-4"></i>
+          <p class=" mb-0 ">{{userName}}</p>
+          <i class="bi bi-person fs-4" style="background-color: #b02a37;"></i>
           </button>
           <ul class="dropdown-menu dropdown-menu-end">
             <!-- Mostra “Acceso/Registro” se NON hai usuario logueado -->
@@ -69,6 +72,7 @@
 
 <script setup>
 import { RouterLink } from 'vue-router';
+
 import { ref, onMounted } from 'vue'
 
 // Estado do login
@@ -92,6 +96,7 @@ function logout() {
   // Actualiza estado
   isLogueado.value = false
   userName.value = ''
+
   // Redirixe ao inicio recargando a páxina
   window.location.href = '/'
 }
@@ -110,4 +115,7 @@ function logout() {
   color: #fff; /* blanco intenso al pasar el ratón */
 }
 
+.navbar.bg-danger {
+  background-color:  #b02a37!important; /* #e57373  */
+}
 </style>

@@ -68,8 +68,8 @@
       "email": "maria.fernandez@example.com",
       "movil": "623456789",
       "direccion": "Calle Gómez 14",
-      "provincia": "Málaga",
-      "municipio": "Ronda",
+      "provincia": "Cáceres",
+      "municipio": "Abadía",
       "historico": true,
       "lopd": true,
       "password": "",
@@ -127,7 +127,7 @@
       "apellidos": "Gómez López",
       "email": "isabel.gomez@example.com",
       "movil": "690123456",
-      "direccion": "Calle Sánchez 80",
+      "direccion": "Calle Sánchez 82",
       "provincia": "Cádiz",
       "municipio": "Chiclana de la Frontera",
       "historico": true,
@@ -204,7 +204,7 @@
       "movil": "645678901",
       "direccion": "Calle García 21",
       "provincia": "Valencia",
-      "municipio": "Gandía",
+      "municipio": "Ademuz",
       "historico": true,
       "lopd": true,
       "password": "",
@@ -317,60 +317,59 @@
     },
     {
       "id": "971c",
-      "fecha_alta": "2025-10-02",
       "dni": "00000000T",
       "nombre": "Sonia",
       "apellidos": "Abalos Martínez",
-      "eemail": "sonia@gmil.com",
+      "email": "sonia@gmil.com",
       "movil": "654789465",
       "direccion": "Avda. De Galicia, 101",
       "provincia": "Cuenca",
       "municipio": "Alconchel de la Estrella",
+      "fecha_alta": "2025-10-02",
       "historico": false
     },
     {
       "id": "9afd",
-      "fecha_alta": "2025-02-10",
       "dni": "99999999R",
       "nombre": "Francisco",
       "apellidos": "Alonso Gil",
-      "eemail": "gil@gil.com",
+      "email": "gil@gil.com",
       "movil": "654654654",
       "direccion": "Avenida Del Puente, 80",
-      "provincia": "Pontevedra",
-      "municipio": "Vigo",
-      "historico": true,
-      "email": "asdf@asdf.ok"
+      "provincia": "Girona",
+      "municipio": "Agullana",
+      "fecha_alta": "2025-02-10",
+      "historico": true
     },
     {
       "id": "c9ee",
-      "fecha_alta": "2025-10-03",
       "dni": "39390917J",
       "nombre": "Paula",
       "apellidos": "Gil Santos",
-      "eemail": "email@correo.com",
       "movil": "654784315",
       "direccion": "Avenida Del Puerto, 1",
       "provincia": "Guadalajara",
       "municipio": "Driebes",
-      "historico": true
+      "fecha_alta": "2025-10-03",
+      "historico": true,
+      "lopd": true,
+      "email": "paula@gmail.com"
     },
     {
       "id": "ec7e",
-      "fecha_alta": "2025-10-03",
       "dni": "Y1362780K",
       "nombre": "Alicia",
       "apellidos": "Suárez Gómez",
-      "eemail": "alicia@email.ru",
+      "email": "alicia@email.ru",
       "movil": "658451248",
       "direccion": "Calle Principal, 12",
       "provincia": "Girona",
       "municipio": "Arbúcies",
+      "fecha_alta": "2025-10-03",
       "historico": true
     },
     {
       "id": "a1b9",
-      "fecha_alta": "2025-10-09",
       "dni": "X4841619G",
       "nombre": "Marta",
       "apellidos": "Abril López",
@@ -379,35 +378,122 @@
       "direccion": "Calle Rúa, 14 4ºa",
       "provincia": "Huelva",
       "municipio": "Alájar",
+      "fecha_alta": "2025-10-09",
       "historico": false
     },
     {
       "id": "68a1",
-      "fecha_alta": "2025-10-08",
       "dni": "94016002Y",
       "nombre": "Amancio",
       "apellidos": "Ara Sol",
       "email": "sol@mail.com",
-      "movil": "652145786",
+      "movil": "652145785",
       "direccion": "Calle Sol, 25",
       "provincia": "Huelva",
-      "municipio": "Cerro de Andévalo, El",
-      "historico": true
+      "municipio": "Aljaraque",
+      "fecha_alta": "2025-10-08",
+      "historico": true,
+      "lopd": true,
+      "tipoCliente": "empresa",
+      "password": "$2b$10$F/Lgh/VQ3dcS8NAEIabyS.BgI3BtOX4NrDk6F5YX9T7C3D0/rdIJm",
+      "password2": ""
     },
     {
-      "id": "5eea",
-      "dni": "39498138P",
-      "nombre": "Mateo",
-      "apellidos": "Sanmartin Fernandez",
-      "email": "mateo.sanmartin.fernandez@gmail.com",
-      "movil": "698119647",
-      "direccion": "Sanjurjo Badía 7 1C",
-      "provincia": "Pontevedra",
-      "municipio": "Cañiza, A",
-      "fecha_alta": "2025-11-12",
-      "historico": false,
+      "id": "b38d",
+      "dni": "Z4268144Q",
+      "nombre": "Santiago",
+      "apellidos": "Aldo Santos",
+      "email": "aldo@gao.es",
+      "movil": "654213658",
+      "direccion": "Calle Luna, 34",
+      "provincia": "León",
+      "municipio": "Alija del Infantado",
+      "fecha_alta": "2025-11-09",
+      "historico": true,
+      "lopd": true
+    },
+    {
+      "id": "c457",
+      "dni": "39491578A",
+      "nombre": "Aman ",
+      "apellidos": "Lama Vilariño",
+      "email": "amaa@gmail.com",
+      "movil": "632589417",
+      "direccion": "Chapela 12",
+      "provincia": "Badajoz",
+      "municipio": "Ahillones",
+      "fecha_alta": "2025-11-05",
+      "historico": true,
       "lopd": true,
-      "tipoCliente": "empresa"
+      "tipoCliente": "particular"
+    },
+    {
+      "id": "36e0",
+      "dni": "98765432M",
+      "nombre": "Amancios",
+      "apellidos": "Alonso Gil",
+      "email": "xsf@as.com",
+      "movil": "652147896",
+      "direccion": "Calle Luna, 38",
+      "provincia": "Albacete",
+      "municipio": "Abengibre",
+      "fecha_alta": "2025-11-19",
+      "historico": true,
+      "lopd": true,
+      "tipoCliente": "particular",
+      "password": "abc123.",
+      "password2": "abc123."
+    },
+    {
+      "id": "ff89",
+      "dni": "45678321E",
+      "nombre": "Carlos",
+      "apellidos": "Abril López",
+      "email": "asdzfsdff@asdf.ok",
+      "movil": "658974251",
+      "direccion": "Calle García 16",
+      "provincia": "Albacete",
+      "municipio": "Albatana",
+      "fecha_alta": "2025-11-03",
+      "historico": true,
+      "lopd": true,
+      "tipoCliente": "empresa",
+      "password": "$2b$10$rCo2NncEOdBWO5Om7/li9O8/uQq68N7Qy60vpDZMdXCghc2VXixyW"
+    },
+    {
+      "id": "fa2a",
+      "dni": "30291457C",
+      "nombre": "Marta",
+      "apellidos": "Abril López",
+      "email": "asdgfsdgdf@asdf.ok",
+      "movil": "698541235",
+      "direccion": "Calle García 46",
+      "provincia": "Albacete",
+      "municipio": "Albatana",
+      "fecha_alta": "2025-11-05",
+      "historico": true,
+      "lopd": true,
+      "tipoCliente": "particular",
+      "password": "$2b$10$EJxcveCypabEW9hZ3oT0SevroaVF.O8jqW26NGKCPMDadtRuOwKrq",
+      "password2": ""
+    },
+    {
+      "id": "admin001",
+      "dni": "12345678A",
+      "nombre": "Admin",
+      "apellidos": "Sistema",
+      "email": "admin@sistema.com",
+      "movil": "600000000",
+      "direccion": "Calle Admin, 1",
+      "provincia": "Madrid",
+      "municipio": "Madrid",
+      "fecha_alta": "2025-01-01",
+      "historico": true,
+      "lopd": true,
+      "tipoCliente": "admin",
+      "tipo": "admin",
+      "password": "$2b$10$G.cqffUuq2kw0gJeIuERYuMnmD/apqgHCUb4PXU/t6gHv/Jv2asQi",
+      "password2": ""
     }
   ],
   "noticias": [
@@ -424,194 +510,48 @@
       "fecha": "2025-10-23"
     },
     {
-      "id": "2f48",
+      "id": "3",
       "titulo": "La UE dando palos de ciego en el mundo del motor",
       "contenido": "A pesar del firme respaldo de países como España y Francia a la meta de 2035 para prohibir la venta de coches nuevos con motores de combustión interna en la Unión Europea, Alemania ha impulsado una revisión de esta normativa ante la presión de los fabricantes de automóviles. Esta directiva forma parte del Pact Verde Europeo y pretende acelerar el fin de los combustibles fósiles en el transporte.",
       "fecha": "2025-10-24"
     }
   ],
-  "modelos": [
+  "citas": [
     {
-      "_id": {
-        "$oid": "6909b9faf474abc658dc6e54"
-      },
-      "tipo": "coche",
-      "marca": "Toyota",
-      "modelo": "Corolla",
-      "anio": 2019,
-      "kilometros": 73500,
-      "precio": 13500,
-      "combustible": "gasolina",
-      "transmision": "manual",
-      "potencia_cv": 122,
-      "descripcion": "Toyota Corolla 2019 en muy buen estado, único propietario, revisiones al día.",
-      "ubicacion": {
-        "ciudad": "Santiago de Compostela",
-        "provincia": "A Coruña"
-      },
-      "contacto": {
-        "nombre": "Juan Pérez",
-        "telefono": "+34 612 345 678",
-        "email": "juan.perez@example.com"
-      },
-      "fecha_publicacion": {
-        "$date": "2025-11-04T00:00:00.000Z"
-      },
-      "estado": "disponible",
-      "matricula": "ABC1213",
-      "id": "4e8f"
+      "id": "1",
+      "matricula": "4458MMM",
+      "movil": "604037382",
+      "fechaCita": "2025-11-18",
+      "servicioTaller": "preITV",
+      "estadoCita": "Pendiente",
+      "acepta": true
     },
     {
-      "_id": {
-        "$oid": "690b1a9f7e347ebd181254a7"
-      },
-      "tipo": "coche",
-      "marca": "Volkswagen",
-      "modelo": "Golf",
-      "anio": 2020,
-      "kilometros": 48000,
-      "precio": 15800,
-      "combustible": "diésel",
-      "transmision": "manual",
-      "potencia_cv": 115,
-      "descripcion": "Volkswagen Golf 2020 con bajo consumo y mantenimiento reciente. ITV pasada.",
-      "ubicacion": {
-        "ciudad": "Vigo",
-        "provincia": "Pontevedra"
-      },
-      "contacto": {
-        "nombre": "María López",
-        "telefono": "+34 698 112 903",
-        "email": "maria.lopez@example.com"
-      },
-      "fecha_publicacion": {
-        "$date": "2025-11-03T00:00:00.000Z"
-      },
-      "estado": "disponible",
-      "matricula": "BBD1245",
-      "id": "03d7"
+      "id": "2",
+      "matricula": "2770HPM",
+      "movil": "654236987",
+      "fechaCita": "2025-11-02",
+      "servicioTaller": "revisión",
+      "estadoCita": "Finalizado",
+      "acepta": true
     },
     {
-      "_id": {
-        "$oid": "690b1a9f7e347ebd181254a8"
-      },
-      "tipo": "coche",
-      "marca": "Peugeot",
-      "modelo": "208",
-      "anio": 2018,
-      "kilometros": 91000,
-      "precio": 9700,
-      "combustible": "gasolina",
-      "transmision": "automático",
-      "potencia_cv": 100,
-      "descripcion": "Peugeot 208 automático en excelente estado interior, ideal para ciudad.",
-      "ubicacion": {
-        "ciudad": "A Coruña",
-        "provincia": "A Coruña"
-      },
-      "contacto": {
-        "nombre": "Carlos Fernández",
-        "telefono": "+34 611 223 345",
-        "email": "carlos.fernandez@example.com"
-      },
-      "fecha_publicacion": {
-        "$date": "2025-10-28T00:00:00.000Z"
-      },
-      "estado": "disponible",
-      "matricula": "CAD4567",
-      "id": "9f81"
+      "id": "3",
+      "matricula": "4458MMM",
+      "movil": "604037381",
+      "fechaCita": "2025-11-04",
+      "servicioTaller": "preITV",
+      "estadoCita": "Finalizado",
+      "acepta": true
     },
     {
-      "_id": {
-        "$oid": "690b1a9f7e347ebd181254a9"
-      },
-      "tipo": "coche",
-      "marca": "Tesla",
-      "modelo": "Model 3",
-      "anio": 2021,
-      "kilometros": 32000,
-      "precio": 32500,
-      "combustible": "eléctrico",
-      "transmision": "automático",
-      "potencia_cv": 283,
-      "descripcion": "Tesla Model 3 Long Range con Autopilot y mantenimiento oficial.",
-      "ubicacion": {
-        "ciudad": "Ourense",
-        "provincia": "Ourense"
-      },
-      "contacto": {
-        "nombre": "Laura González",
-        "telefono": "+34 600 889 451",
-        "email": "laura.gonzalez@example.com"
-      },
-      "fecha_publicacion": {
-        "$date": "2025-10-20T00:00:00.000Z"
-      },
-      "estado": "reservado",
-      "matricula": "ABF5467",
-      "id": "0ade"
-    },
-    {
-      "_id": {
-        "$oid": "690b1a9f7e347ebd181254aa"
-      },
-      "tipo": "coche",
-      "marca": "Seat",
-      "modelo": "León",
-      "anio": 2017,
-      "kilometros": 112000,
-      "precio": 8900,
-      "combustible": "diésel",
-      "transmision": "manual",
-      "color": "gris oscuro",
-      "puertas": 5,
-      "potencia_cv": 105,
-      "descripcion": "Seat León 1.6 TDI, cadena de distribución cambiada, muy cuidado.",
-      "ubicacion": {
-        "ciudad": "Lugo",
-        "provincia": "Lugo"
-      },
-      "contacto": {
-        "nombre": "Andrés Castro",
-        "telefono": "+34 622 774 982",
-        "email": "andres.castro@example.com"
-      },
-      "fecha_publicacion": {
-        "$date": "2025-09-15T00:00:00.000Z"
-      },
-      "estado": "vendido",
-      "id": "0c3d"
-    },
-    {
-      "_id": {
-        "$oid": "690b1a9f7e347ebd181254ab"
-      },
-      "tipo": "coche",
-      "marca": "Renault",
-      "modelo": "Clio",
-      "anio": 2016,
-      "kilometros": 125000,
-      "precio": 6800,
-      "combustible": "gasolina",
-      "transmision": "manual",
-      "potencia_cv": 90,
-      "descripcion": "Renault Clio 1.2, consumo muy bajo, revisado y sin accidentes.",
-      "ubicacion": {
-        "ciudad": "Ferrol",
-        "provincia": "A Coruña"
-      },
-      "contacto": {
-        "nombre": "Beatriz Méndez",
-        "telefono": "+34 690 440 871",
-        "email": "beatriz.mendez@example.com"
-      },
-      "fecha_publicacion": {
-        "$date": "2025-08-10T00:00:00.000Z"
-      },
-      "estado": "disponible",
-      "matricula": "FDG4564",
-      "id": "70f1"
+      "id": "4",
+      "matricula": "4458MMM",
+      "movil": "604037383",
+      "fechaCita": "2025-11-04",
+      "servicioTaller": "revisión",
+      "estadoCita": "Pendiente",
+      "acepta": true
     }
-  ],
-  "taller": []
+  ]
 }

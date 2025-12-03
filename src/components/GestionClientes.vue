@@ -3,7 +3,8 @@
 
   <div
     class="mx-auto mt-2 p-4 pb-5 border rounded-3 shadow-sm min-vh-75 bg-light">
-    <h3 class="text-center mt-2 mb-3 d-flex align-items-center justify-content-center">
+    <h3 class="text-center mt-2 mb-3 d-flex align-items-center justify-content-center" 
+    style="color: #7a0f16;">
       <i class="bi bi-person-circle fs-3 me-2"></i>
       Gestión de Clientes
     </h3>
@@ -30,7 +31,7 @@
             />
 			      <button
               type="button"
-              class="btn btn-primary ms-3"
+              class="btn btn-secondary ms-3"
               @click="buscarClientePorDNI(nuevoCliente.dni)"
               :disabled="editando"
               :aria-disabled="String(editando)">
@@ -74,7 +75,7 @@
         <!-- botón limpiar cambios -->
         <button
           type="button"
-          class="btn btn-outline-primary btn-sm d-flex align-items-center justify-content-center  "
+          class="btn btn-secondary btn-sm d-flex align-items-center justify-content-center  "
           @click="limpiarCampos"
           title="Reiniciar campos"
         >
@@ -207,6 +208,36 @@
 
       <!-- Aviso Legal -->
 
+      <!-- Contraseña -->
+      <div class="row mb-3">
+        <div class="row g-2 justify-content-center mt-2">
+          <div class="col-md-3 d-flex mt-3 align-items-center">
+            <label class="me-2 mb-0 text-nowrap align-middle"
+              >Contraseña:</label
+            >
+            <input
+              type="password"
+              v-model="nuevoCliente.password"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <!-- Repetir contraseña -->
+          <div class="col-md-3 d-flex mt-3 align-items-center ms-5">
+            <label class="me-2 mb-0 text-nowrap align-middle"
+              >Repetir Contraseña:</label
+            >
+            <input
+              type="password"
+              v-model="nuevoCliente.password2"
+              class="form-control"
+              required
+            />
+          </div>
+        </div>
+      </div>
+
       <div class="d-flex align-items-center mt-3">
       <div class="flex-grow-1 d-flex justify-content-center">
         <input
@@ -228,7 +259,6 @@
         <div class="form-check form-switch ms-3 invisible">
           <input
             type="checkbox"
-            id="historico"
             v-model="mostrarHistorico"
             class="form-check-input"
             @change="cargarClientes"
@@ -260,7 +290,7 @@
     <!-- Lista de Clientes -->
     <div class="table-responsive">
       <h4 class="text-center w-100 ">Listado Clientes</h4>
-      <table class="table table-bordered table-striped w-100 aling-middle">
+      <table class="table table-bordered table-striped w-100 aling-middle" v-if="isAdmin">
         <thead class="table-primary">
           <tr>
             <th class="text-center">ID</th>
@@ -331,9 +361,12 @@ import {
   getClientePorDni
 } from "@/api/clientes.js";
 import Swal from "sweetalert2";
+import bcrypt from "bcryptjs";
 //import { ref } from 'vue';
 
 //SCRIPT CRUD
+
+const isAdmin = localStorage.getItem('isAdmin') === 'true'
 
 const nuevoCliente = ref({
   dni: "",
@@ -347,8 +380,14 @@ const nuevoCliente = ref({
   fecha_alta: "",
   historico: true,
   lopd: false, // aceptación del aviso legal (L.O.P.D.)
-  tipoCliente: ""
+  tipoCliente: "",
+  tipo: "user",
+  password: "",
+  password2: ""
 });
+
+// Validación contraseña
+const passwordValido = ref(true);
 
 
 
@@ -359,6 +398,7 @@ const clientes = ref([]);
 const numClientes = ref(0);
 const currentPage = ref(1);
 const clientesPorPage = 10;
+let totalPages = 0;
 
 
 /// zona CargarClientes
@@ -366,6 +406,7 @@ const clientesPorPage = 10;
 // Zona Cargar clientes Al Montar el componente
 onMounted(async () => {
   cargarClientes()
+  totalPages = Math.ceil(numClientes.value / clientesPorPage); 
   currentPage.value = 1;
 });
 
@@ -379,7 +420,7 @@ const beforePagina = () => {
 };
 
 const nextPagina = () => {
-  const totalPages = Math.ceil(numClientes.value / clientesPorPage); 
+  totalPages = Math.ceil(numClientes.value / clientesPorPage);
   //redondear hacia arriba para mostrar la última página aunque no esté completa
   if (currentPage.value < totalPages) {
     currentPage.value++;
@@ -440,6 +481,23 @@ const guardarCliente = async () => {
       return;
     }
 
+  // Validar contraseña: mínimo 6 caracteres y que coincidan
+  if (!editando.value) { // solo validar en creación (opcional)
+    const pw = nuevoCliente.value.password || "";
+    const pw2 = nuevoCliente.value.password2 || "";
+    if (pw.length < 6 || pw !== pw2) {
+      passwordValido.value = false;
+      Swal.fire({
+        icon: "error",
+        title: "Contraseñas inválidas",
+        text: "La contraseña debe tener al menos 6 caracteres y coincidir en ambos campos.",
+      });
+      return;
+    } else {
+      passwordValido.value = true;
+    }
+  }
+
   // Asegurar que antes de guardar la fecha de alta esté en formato dd/mm/yyyy
   if (nuevoCliente.value.fecha_alta.includes("/")){
     nuevoCliente.value.fecha_alta = nuevoCliente.value.fecha_alta
@@ -479,6 +537,14 @@ const guardarCliente = async () => {
   if (!result.isConfirmed) return;
 
   try {
+    // Hashear contraseña antes de guardar
+    if (nuevoCliente.value.password) {
+      const salt = bcrypt.genSaltSync(10);
+      nuevoCliente.value.password = bcrypt.hashSync(nuevoCliente.value.password, salt);
+      // Limpiar password2 después de hashear
+      delete nuevoCliente.value.password2;
+    }
+
     if (editando.value) {
       // Modificar cliente (PUT)
       const clienteActualizado = await updateCliente(
@@ -610,6 +676,8 @@ const editarCliente = (movil) => {
   nuevoCliente.value = { ...cliente, fecha_alta: fechaFormateada };
   editando.value = true;
   filtrarMunicipios();
+  nuevoCliente.value.municipio = cliente.municipio;
+  nuevoCliente.value.password = "";
   clienteEditandoId.value = cliente.id;
 };
 
@@ -812,6 +880,8 @@ function formatearFechaParaInput(fecha) {
   return "";
 }
 
+
+
 const buscarClientePorDNI = async (dni) => {
   if (!dni || dni.trim() === "") {
     Swal.fire({
@@ -881,9 +951,18 @@ const limpiarCampos = () => {
     fecha_alta: "",
     historico: true,
     lopd: false,
-    tipoCliente: ""
+    tipoCliente: "",
+    password: "",
+    password2: ""
   }
 }
+
+// Añadimos limpieza de passwords si se usa sin reescribir todo
+const validarPassword = () => {
+  const pw = nuevoCliente.value.password || "";
+  const pw2 = nuevoCliente.value.password2 || "";
+  passwordValido.value = pw.length >= 6 && pw === pw2;
+};
 
 </script>
 
@@ -902,10 +981,19 @@ const limpiarCampos = () => {
   min-width: 90px;
 }
 
+.table-primary th {
+  background-color:   #f59191 !important;
+  color: black !important;
+}
+
 /* Visual for readonly/locked inputs when editing a cliente */
 .readonly-input {
   background-color: #eef2f6 !important; /* soft gray */
   cursor: not-allowed;
   color: #495057; /* slightly muted text color */
 }
+
+
+
+
 </style>
